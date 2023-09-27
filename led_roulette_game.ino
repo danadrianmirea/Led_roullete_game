@@ -1,3 +1,5 @@
+// Change component pins for your own
+
 #define LED_1 13
 #define LED_2 12
 #define LED_3 10
@@ -7,11 +9,12 @@
 #define BUTTON 2
 #define BUZZER 7
 
-#define WINNER LED LED_3
-#define BUZZER_TIME 200
-#define LED_CANT 6
-int leds[LED_CANT] = {LED_1, LED_2, LED_3, LED_4, LED_5, LED_6};
+#define WINNER_LED LED_3
 
+#define LED_AMOUNT 6
+int leds[LED_AMOUNT] = {LED_1, LED_2, LED_3, LED_4, LED_5, LED_6};
+
+#define BUZZER_TIME 200
 int time_on = 1000;
 unsigned long turned_on;
 
@@ -43,7 +46,7 @@ void check_button(int on_led){
 void loop() {
 
   
-  for(int i = 0; i < LED_CANT; i++){
+  for(int i = 0; i < LED_AMOUNT; i++){
 
     turned_on = millis();
 
