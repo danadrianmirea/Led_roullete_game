@@ -4,10 +4,10 @@
 #define LED_4 8
 #define LED_5 9
 #define LED_6 11
-#define BOTON 7
-#define BUZZER 2
+#define BUTTON 2
+#define BUZZER 7
 
-#define WINNER_LED LED_3
+#define WINNER LED LED_3
 #define BUZZER_TIME 200
 #define LED_CANT 6
 int leds[LED_CANT] = {LED_1, LED_2, LED_3, LED_4, LED_5, LED_6};
@@ -26,10 +26,10 @@ void setup() {
 
 void check_button(int on_led){
 
-  if(!digitalRead(BOTON)){
+  if(!digitalRead(BUTTON)){
 
     if(on_led == WINNER_LED){
-      time_on -= 200;
+      time_on -= 100;
       digitalWrite(BUZZER, HIGH);
       delay(BUZZER_TIME);
       digitalWrite(BUZZER, LOW);
